@@ -15,6 +15,7 @@ public class MessageController {
     @GetMapping("/hello")
        public String hello(){
         log.info("saying hello");
+        log.info("otro logcito");
         return "Trying vuejs with spring boot";
      }
 
