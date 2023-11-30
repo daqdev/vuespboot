@@ -23,7 +23,6 @@ target/
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
-/dist/
 /nbdist/
 /.nb-gradle/
 build/
@@ -34,3 +33,9 @@ build/
 .vscode/
 
 .DS_Store
+
+### NODE y plugins
+
+**/dist/
+**/node_modules/
+**/frontend/node/
