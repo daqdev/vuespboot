@@ -25,6 +25,9 @@ import axios from 'axios';
 
 export default {
   name: 'HelloWorld',
+  components: {
+    
+  },
   props: {
     msg: {
       type: String,
@@ -49,7 +52,7 @@ export default {
       const { data } = await axios.get('http://localhost:8080/api/messages/hello')
       jsonMensaje.value = JSON.parse(data.jsonMensaje)
       domiPais.value = jsonMensaje.value.domiPais==='ARG'?'ARGENTINA':jsonMensaje.value.domiPais
-      empresaContratista.value = jsonMensaje.value.empresaContratista
+      empresaContratista.value = jsonMensaje.value.empresaContratista.nombre
       // const { domiPais, empresaContratista } = data.value
       msg.value = data
     }

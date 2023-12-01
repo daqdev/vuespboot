@@ -9,7 +9,6 @@
   "dependencies": {
     "axios": "^1.6.2",
     "core-js": "^3.8.3",
-    "radix-vue": "^1.2.3",
     "vue": "^3.2.13"
   },
   "devDependencies": {
