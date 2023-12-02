@@ -1,13 +1,20 @@
 <template>
-  <h1>INICIO</h1>
-  <div class="form-container">
+  <!-- <h1>INICIO</h1> -->
+
+    <div class="flex flex-column gap-2">
+      <label for="name">Pais</label>
+      <InputText id="name" type="text" v-model="domiPais" aria-describedby="username-help" />
+    <small id="username-help">Enter your username to reset your password.</small>
+    </div>
+
+  <!-- <div class="form-container">
     
     <input v-model="rangeOrderNum" type="text" placeholder="ABC1000">
     <input v-model="provincia" type="text" placeholder="Provincia" >
     <input v-model="tipoContrato" type="text" placeholder="Eventos, Eventos corp...">
     <input v-model="sociedad" type="text" placeholder="Sociedad">
     <input v-model="empresaContratista" type="text" placeholder="Empresa">
-  </div>
+  </div> -->
   <br>
   <button @click="hello">GO</button>
 
@@ -79,36 +86,12 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
-.form-container {
+.container{
   display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 
-.form-input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-h3 {
-  margin: 40px 0 0;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
 }
 </style>
