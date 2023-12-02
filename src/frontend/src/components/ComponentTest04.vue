@@ -24,7 +24,6 @@ const items = ref([]);
 const paises = ref([ "Argentina", "Brasil", "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela" ]);
 
 const search = (event) => {
-    // items.value = [...Array(10).keys()].map((item) => event.query + '-' + item);
     items.value = paises.value.filter((item) => item.toUpperCase().includes (event.query.toUpperCase()));
 
 }
