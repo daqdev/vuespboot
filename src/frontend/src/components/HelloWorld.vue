@@ -48,6 +48,10 @@ export default {
     const jsonMensaje = ref('');
     const domiPais = ref('');
     const empresaContratista = ref('');
+    const rangeOrderNum = ref('');
+    const sociedad = ref('');
+    const provincia = ref('');
+    const tipoContrato = ref('');
     const hello = async () => {
       const { data } = await axios.get('http://localhost:8080/api/messages/hello')
       jsonMensaje.value = JSON.parse(data.jsonMensaje)
@@ -58,11 +62,16 @@ export default {
     }
 
     return {
-      msg,
-      jsonMensaje,
       domiPais,
       empresaContratista,
+      jsonMensaje,
+      msg,
       // msg: msg?msg:'Hello Vue 3 + TypeScript + Vite'
+      provincia, 
+      rangeOrderNum,
+      sociedad,
+      tipoContrato,
+
       hello,
     }
 

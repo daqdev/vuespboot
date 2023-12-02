@@ -1,4 +1,4 @@
-package ar.com.telecom.fmvue.dao;
+package ar.com.telecom.fmvue.dao.ot_fallida;
 
 
 import ar.com.telecom.fmvue.model.OrdenTrabajoFallida;

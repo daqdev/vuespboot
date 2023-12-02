@@ -1,6 +1,7 @@
 package ar.com.telecom.fmvue.controller;
 
-import ar.com.telecom.fmvue.dao.OrdenTrabajoFallidaDAO;
+
+import ar.com.telecom.fmvue.dao.ot_fallida.OrdenTrabajoFallidaDAO;
 import ar.com.telecom.fmvue.model.OrdenTrabajoFallida;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.CrossOrigin;
