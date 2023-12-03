@@ -12,6 +12,8 @@
 
   <hr><br>
   <ComponentTest04 />
+  <hr><br>
+  <DetailsTable />
 </template>
 
 <script>
@@ -20,6 +22,7 @@ import ComponentTest01 from './components/ComponentTest01.vue'
 import ComponentTest02 from './components/ComponentTest02.vue'
 import ComponentTest03 from './components/ComponentTest03.vue'
 import ComponentTest04 from './components/ComponentTest04.vue'
+import DetailsTable from './components/DetailsTable.vue'
 
 export default {
   name: 'App',
@@ -28,7 +31,8 @@ export default {
     ComponentTest01,
     ComponentTest02,
     ComponentTest03,
-    ComponentTest04
+    ComponentTest04,
+    DetailsTable
   }
 }
 </script>
