@@ -11,8 +11,10 @@
       </tr>
     </thead>
     <tbody>
-        <tr class="border-b border-black dark:border-gray-700">
-        <td class="p-4 bg-gray-500 text-white font-bold dark:bg-gray-700">Color</td>
+        <!-- <tr class="border-b border-black dark:border-gray-700"> -->
+        <!-- <td class="p-4 bg-gray-500 text-white font-bold dark:bg-gray-700">Color</td> -->
+        <tr class="border-b border-black dark:border-gray-700" v-for="(value, key) in dataObject" :key="key">
+        <td class="p-4 bg-gray-500 text-white font-bold dark:bg-gray-700">{{ key }}</td>
         <td class="p-4 bg-gray-200 text-gray-700 dark:bg-gray-900 border-l border-black dark:border-gray-700">
           Red
         </td>
@@ -27,6 +29,13 @@
 
 
 export default {
+
+  props:{
+    dataObject:{
+      type:Object,
+      required:true
+    }
+  },
     
     setup() {
         

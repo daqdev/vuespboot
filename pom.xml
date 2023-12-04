@@ -18,6 +18,7 @@
         <java.version>17</java.version>
         <node.version>v18.18.1</node.version>
         <npm.version>9.8.1</npm.version>
+        <yarn.version>v1.22.21</yarn.version>
     </properties>
     <dependencies>
         <dependency>
@@ -65,21 +66,30 @@
 
                 <executions>
                     <execution>
-                        <id>Install node and npm</id>
+<!--                        <id>Install node and npm</id>-->
+<!--                        <goals>-->
+<!--                            <goal>install-node-and-npm</goal>-->
+<!--                        </goals>-->
+                        <id>Install node and yarn</id>
                         <goals>
-                            <goal>install-node-and-npm</goal>
+                            <goal>install-node-and-yarn</goal>
                         </goals>
                         <phase>generate-resources</phase>
                         <configuration>
                             <nodeVersion>${node.version}</nodeVersion>
-                            <npmVersion>${npm.version}</npmVersion>
+<!--                            <npmVersion>${npm.version}</npmVersion>-->
+                            <yarnVersion>${yarn.version}</yarnVersion>
                         </configuration>
                     </execution>
 
                     <execution>
-                        <id>npm install</id>
+<!--                        <id>npm install</id>-->
+<!--                        <goals>-->
+<!--                            <goal>npm</goal>-->
+<!--                        </goals>-->
+                        <id>yarn install</id>
                         <goals>
-                            <goal>npm</goal>
+                            <goal>yarn</goal>
                         </goals>
                         <phase>generate-resources</phase>
                         <configuration>
@@ -88,9 +98,9 @@
                     </execution>
 
                     <execution>
-                        <id>npm build</id>
+                        <id>yarn build</id>
                         <goals>
-                            <goal>npm</goal>
+                            <goal>yarn</goal>
                         </goals>
                         <phase>generate-resources</phase>
                         <configuration>
@@ -125,6 +135,14 @@
                         </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>woff</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>eot</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+                </configuration>
             </plugin>
 
             <plugin>

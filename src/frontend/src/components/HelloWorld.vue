@@ -18,19 +18,24 @@
   <br>
   <button @click="hello">GO</button>
 
-  <h3>{{ domiPais }}</h3>
-  <h3>{{ empresaContratista }}</h3>
+  <!-- <h3>{{ domiPais }}</h3>
+  <h3>{{ empresaContratista }}</h3> -->
 
 
-  <h3 v-if="jsonMensaje">{{ jsonMensaje }}</h3>
+  <h3 v-if="msg">{{ msg }}</h3>
+  <DetailsTable/>
 </template>
 
 
 <script>
 import { ref } from 'vue';
 import axios from 'axios';
+import DetailsTable from './DetailsTable.vue'
 
 export default {
+  components: {
+    DetailsTable
+  },
   name: 'HelloWorld',
   components: {
     
@@ -51,7 +56,7 @@ export default {
 // Contratista
 
   setup() {
-    const msg = ref('')
+    const msg = ref(null)
     const jsonMensaje = ref('');
     const domiPais = ref('');
     const empresaContratista = ref('');
@@ -59,13 +64,15 @@ export default {
     const sociedad = ref('');
     const provincia = ref('');
     const tipoContrato = ref('');
+    const nroOrdenTrabajo = ref('');
     const hello = async () => {
       const { data } = await axios.get('http://localhost:8080/api/messages/hello')
       jsonMensaje.value = JSON.parse(data.jsonMensaje)
       domiPais.value = jsonMensaje.value.domiPais==='ARG'?'ARGENTINA':jsonMensaje.value.domiPais
       empresaContratista.value = jsonMensaje.value.empresaContratista.nombre
+      nroOrdenTrabajo.value = jsonMensaje.value.nroOrdenTrabajo
       // const { domiPais, empresaContratista } = data.value
-      msg.value = data
+      msg.value = {domiPais, empresaContratista, nroOrdenTrabajo}
     }
 
     return {
