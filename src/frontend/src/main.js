@@ -5,6 +5,7 @@ import PrimeVue from 'primevue/config';
 
 
 import InputText from 'primevue/inputtext';
+import InputNumber from 'primevue/inputnumber';
 import Button from 'primevue/button';
 import Toast from 'primevue/toast';
 import ToastService from 'primevue/toastservice';
@@ -24,6 +25,7 @@ createApp(App)
 .use(ToastService)
 .use(AutoComplete)
 .component('InputText', InputText)
+.component('InputNumber', InputNumber)
 .component('Button', Button)
 .component('AutoComplete', AutoComplete)
 .component('Toast', Toast)

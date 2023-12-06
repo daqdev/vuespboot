@@ -43,6 +43,9 @@ After confirmation maybe show a table with last correct executions
       v-if="msg" 
       :dataObject="msg">
     </details-table>
+
+    <order-range>
+    </order-range>
   </template>
   
   
@@ -50,9 +53,11 @@ After confirmation maybe show a table with last correct executions
   import { ref } from 'vue';
   import axios from 'axios';
   import DetailsTable from '@/components/DetailsTable.vue';
+  import OrderRange from '@/components/OrderRange.vue';
   
   export default {
-    components: { DetailsTable },
+    components: { DetailsTable,
+      OrderRange },
     name: 'OrderGen',
   
   //   Region
