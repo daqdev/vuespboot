@@ -23,29 +23,21 @@
 
 
   <h3 v-if="msg">{{ msg }}</h3>
-  <DetailsTable/>
+  <details-table
+    v-if="msg" 
+    :dataObject="msg">
+  </details-table>
 </template>
 
 
 <script>
 import { ref } from 'vue';
 import axios from 'axios';
-import DetailsTable from './DetailsTable.vue'
+import DetailsTable from '@/components/DetailsTable.vue';
 
 export default {
-  components: {
-    DetailsTable
-  },
+  components: { DetailsTable },
   name: 'HelloWorld',
-  components: {
-    
-  },
-  props: {
-    msg: {
-      type: String,
-      required: false
-    }
-  },
 
 //   Region
 // Subregion
