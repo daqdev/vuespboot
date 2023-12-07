@@ -1,30 +1,26 @@
 <template>
-    <div class="card flex flex-column md:flex-row gap-3">
-
+    <div class="flex card md:flex-row gap-2">
         <InputGroup>
-            <!-- <InputGroupAddon><i class="pi pi-user"></i></InputGroupAddon> -->
-            <InputText v-model="alphabeticalValue" :validator="validateAlphabetical" placeholder="patron" />
+            <span class="p-float-label">
+            <InputText id="alphabeticalValueId" v-model="alphabeticalValue" placeholder="Ej.: ABC"/>
+            <label for="alphabeticalValueId">Patron ej: ABC</label>
+            </span>
         </InputGroup>
 
         <InputGroup>
-            <!-- <InputGroupAddon>$</InputGroupAddon> -->
-            <InputNumber v-model="numericValue" :validator="validateNumeric" :formatter="formatNumber"
-                placeholder="desde" />
-            <!-- <InputGroupAddon>.00</InputGroupAddon> -->
-        </InputGroup>
-
-        <InputGroup>
-            <!-- <InputGroupAddon>www</InputGroupAddon> -->
-            <InputNumber v-model="greaterValue" :validator="validateGreater" placeholder="hasta" />
+            <span class="p-float-label">
+                <InputNumber id="numericValueId" v-model="numericValue" :use-grouping="false" placeholder="Ej: 100" />
+                <label for="numericValueId">Numero base ej: 100</label>
+            </span>
         </InputGroup>
     </div>
 </template>
 
 <script>
-import { ref } from 'vue';
-import { InputText } from 'primevue/inputtext';
-import { InputNumber } from 'primevue/inputnumber';
-import { InputGroup } from 'primevue/inputgroup';
+import { ref, watch } from 'vue';
+import InputText from 'primevue/inputtext';
+import InputNumber from 'primevue/inputnumber';
+import InputGroup from 'primevue/inputgroup';
 
 
 export default {
@@ -35,60 +31,15 @@ export default {
     },
     setup() {
         const alphabeticalValue = ref('');
-        const numericValue = ref('');
-        const greaterValue = ref('');
-
-        const validateAlphabetical = (value) => {
-            if (value.length < 3) {
-                return {
-                    valid: false,
-                    message: 'The alphabetical value must be at least 3 characters'
-                };
-            }
-            return { valid: true };
-        }
-
-        const validateNumeric = (value) => {
-            if (value.length < 3) {
-                return {
-                    valid: false,
-                    message: 'The numeric value must be at least 3 characters'
-                };
-            }
-            return { valid: true };
-        }
-
-        const validateGreater = (value) => {
-            if (value.length < 3) {
-                return {
-                    valid: false,
-                    message: 'The greater value must be at least 3 characters'
-                };
-            }
-            return { valid: true };
-        }
-        const formatNumber = (value) => {
-            // Custom formatter to remove the colon at thousands
-            return value.toString().replace(/,/g, '');
-        }
+        const numericValue = ref(null);
 
         return {
             alphabeticalValue,
             numericValue,
-            greaterValue,
-            validateAlphabetical,
-            validateNumeric,
-            validateGreater,
-            formatNumber
         };
     },
 }
 
 </script>
 <style scoped>
-.InputText {
-    width: 100%;
-    padding: 1rem 1rem;
-    /* Adjust the margin as needed */
-}
 </style>
